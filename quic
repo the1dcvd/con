@@ -1,0 +1,35 @@
+inbound
+
+{
+      "port": ПОРТ,
+      "protocol": "vless",
+      "tag": "kcp-in",
+      "settings": {
+        "clients": [
+          {
+            "id": "ВАШ_UUID",
+            "email": "user1"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "quic",
+        "quicSettings":  {
+          "quicSettings": {
+           "security": "aes-128-gcm",
+           "key": "MySecretPassword",
+           "header": {
+             "type": "srtp"
+           }
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
+    },
