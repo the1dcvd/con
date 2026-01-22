@@ -1,0 +1,48 @@
+"inbounds": [
+    {
+      "listen": "IP_адрес_вашего_сервера",
+      "port": 443,
+      "protocol": "vless",
+      "tag": "reality-in",
+      "settings": {
+        "clients": [
+          {
+            "id": "ваш_UUID",
+            "email": "user1"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "http",
+        "httpSettings": {
+          "host": ["somefakedummytext.com"],
+          "path": "/0J3QsNCy0LDQu9GM0L3Ri9C5",
+          "read_idle_timeout": 10,
+          "health_check_timeout": 15,
+          "method": "GET"
+        },
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "ваш_маскировочный_домен:443",
+          "xver": 0,
+          "serverNames": [
+            "ваш_маскировочный_домен"
+          ],
+          "privateKey": "ваш_ПРИВАТНЫЙ_ключ",
+          "minClientVer": "",
+          "maxClientVer": "",
+          "maxTimeDiff": 0,
+          "shortIds": [""]
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
+    },
